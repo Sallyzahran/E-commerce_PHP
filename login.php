@@ -1,5 +1,6 @@
 
 <?php
+$title = "Login";
 
 include "layouts/header.php";
 include "layouts/navbar.php";

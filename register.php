@@ -1,6 +1,9 @@
 
 <?php
 
+
+$title = "Register";
+
 include "layouts/header.php";
 include "layouts/navbar.php";
 include "layouts/breadcrumb.php";

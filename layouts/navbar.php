@@ -15,12 +15,8 @@
                                     <nav>
                                         <ul>
                                             <li class="top-hover"><a href="index.php">home</a>
-                                                <ul class="submenu">
-                                                    <li><a href="index.php">home version 1</a></li>
-                                                    <li><a href="index-2.php">home version 2</a></li>
-                                                </ul>
+                                               
                                             </li>
-                                            <li><a href="about-us.php">about</a></li>
                                             <li class="mega-menu-position top-hover"><a href="shop.php">shop</a>
                                                 <ul class="mega-menu">
                                                     <li>
@@ -69,55 +65,19 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li class="top-hover"><a href="blog-left-sidebar.php">blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog-masonry.php">Blog Masonry</a></li>
-                                                    <li><a href="#">Blog Standard <span><i class="ion-ios-arrow-right"></i></span></a>
-                                                        <ul class="lavel-menu">
-                                                            <li><a href="blog-left-sidebar.php">left sidebar</a></li>
-                                                            <li><a href="blog-right-sidebar.php">right sidebar</a></li>
-                                                            <li><a href="blog-no-sidebar.php">no sidebar</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Post Types <span><i class="ion-ios-arrow-right"></i></span> </a>
-                                                        <ul class="lavel-menu">
-                                                            <li><a href="blog-details-standerd.php">Standard post</a></li>
-                                                            <li><a href="blog-details-audio.php">audio post</a></li>
-                                                            <li><a href="blog-details-video.php">video post</a></li>
-                                                            <li><a href="blog-details-gallery.php">gallery post</a></li>
-                                                            <li><a href="blog-details-link.php">link post</a></li>
-                                                            <li><a href="blog-details-quote.php">quote post</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="top-hover"><a href="#">pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="about-us.php">about us </a></li>
-                                                    <li><a href="shop.php">shop Grid</a></li>
-                                                    <li><a href="shop-list.php">shop list</a></li>
-                                                    <li><a href="product-details.php">product details</a></li>
-                                                    <li><a href="cart-page.php">cart page</a></li>
-                                                    <li><a href="checkout.php">checkout</a></li>
-                                                    <li><a href="wishlist.php">wishlist</a></li>
-                                                    <li><a href="my-account.php">my account</a></li>
-                                                    <li><a href="login-register.php">login / register</a></li>
-                                                    <li><a href="contact.php">contact</a></li>
-                                                </ul>
-                                            </li>
+
+                                            <li><a href="about-us.php">about</a></li>
                                             <li><a href="contact.php">contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
 								<div class="header-currency">
-									<span class="digit">USD <i class="ti-angle-down"></i></span>
+									<span class="digit">Welcome <i class="ti-angle-down"></i></span>
 									<div class="dollar-submenu">
 										<ul>
-											<li><a href="#">$ USD</a></li>
-											<li><a href="#">€ EUR</a></li>
-											<li><a href="#">£ GBP</a></li>
-											<li><a href="#">₹ INR</a></li>
-											<li><a href="#">¥ JPY</a></li>
+											<li><a href="login.php">Login</a></li>
+											<li><a href="register.php">Register</a></li>
+										
 										</ul>
 									</div>
 								</div>
@@ -174,25 +134,9 @@
                             <nav id="mobile-menu-active">
                                 <ul class="menu-overflow">
                                     <li><a href="#">HOME</a>
-                                        <ul>
-                                            <li><a href="index.php">home version 1</a></li>
-                                            <li><a href="index-2.php">home version 2</a></li>
-                                        </ul>
+                                   
                                     </li>
-                                    <li><a href="#">pages</a>
-                                        <ul>
-                                            <li><a href="about-us.php">about us </a></li>
-                                            <li><a href="shop.php">shop Grid</a></li>
-                                            <li><a href="shop-list.php">shop list</a></li>
-                                            <li><a href="product-details.php">product details</a></li>
-                                            <li><a href="cart-page.php">cart page</a></li>
-                                            <li><a href="checkout.php">checkout</a></li>
-                                            <li><a href="wishlist.php">wishlist</a></li>
-                                            <li><a href="my-account.php">my account</a></li>
-                                            <li><a href="login-register.php">login / register</a></li>
-                                            <li><a href="contact.php">contact</a></li>
-                                        </ul>
-                                    </li>
+                                  
                                     <li><a href="shop.php"> Shop </a>
                                         <ul>
                                             <li><a href="#">Categories 01</a>
@@ -237,29 +181,18 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">BLOG</a>
-                                        <ul>
-                                            <li><a href="blog-masonry.php">Blog Masonry</a></li>
-                                            <li><a href="#">Blog Standard</a>
-                                                <ul>
-                                                    <li><a href="blog-left-sidebar.php">left sidebar</a></li>
-                                                    <li><a href="blog-right-sidebar.php">right sidebar</a></li>
-                                                    <li><a href="blog-no-sidebar.php">no sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Post Types</a>
-                                                <ul>
-                                                    <li><a href="blog-details-standerd.php">Standard post</a></li>
-                                                    <li><a href="blog-details-audio.php">audio post</a></li>
-                                                    <li><a href="blog-details-video.php">video post</a></li>
-                                                    <li><a href="blog-details-gallery.php">gallery post</a></li>
-                                                    <li><a href="blog-details-link.php">link post</a></li>
-                                                    <li><a href="blog-details-quote.php">quote post</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="about-us.php">about</a></li>                                 
                                     <li><a href="contact.php"> Contact us </a></li>
+                                    <div class="header-currency">
+									<span class="digit">Welcome <i class="ti-angle-down"></i></span>
+									<div class="dollar-submenu">
+										<ul>
+											<li><a href="login.php">Login</a></li>
+											<li><a href="register.php">Register</a></li>
+										
+										</ul>
+									</div>
+								</div>
                                 </ul>
                             </nav>
                         </div>
