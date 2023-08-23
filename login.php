@@ -1,10 +1,36 @@
-
 <?php
+
+use  App\Http\Requests\Validation;
+ include "./App/Http/Requests/Validation.php";
+
+
 $title = "Login";
 
 include "layouts/header.php";
 include "layouts/navbar.php";
 include "layouts/breadcrumb.php";
+
+
+
+
+if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST){
+
+$validation = new Validation; 
+$validation->setValueName('first name')->setValue($_POST['first_name'])->required();
+
+
+// if(empty($validation->getErrors())){
+
+//     echo "ok";
+// }
+
+
+
+}
+
+
+
+
 
 
 ?>
@@ -24,8 +50,11 @@ include "layouts/breadcrumb.php";
                                 <div id="lg1" class="tab-pane active">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="#" method="post">
-                                                <input type="text" name="user-name" placeholder="Username">
+                                            <form method="post">
+                                                <input type="text" name="first_name" placeholder="First Name">
+                                                <?=  $validation->getMessage('first name')  ??  " "  ?>
+
+
                                                 <input type="password" name="user-password" placeholder="Password">
                                                 <div class="button-box">
                                                     <div class="login-toggle-btn">
