@@ -45,6 +45,19 @@ class Validation {
         }
 
 
+
+        public function in(array $array){
+
+                if ( !in_array($this->value,$array)) {
+          $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} must be in " . implode(' or ',$array);
+
+                }
+
+        return $this;
+
+        }
+
+
     /**
      * Set the value of value
      *
