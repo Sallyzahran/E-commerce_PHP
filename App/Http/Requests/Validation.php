@@ -24,9 +24,6 @@ class Validation {
     }
 
 
-    
-
-
         public function max(int $max){
 
             if ( strlen( $this->value) > $max){
@@ -35,7 +32,15 @@ class Validation {
             }
         return $this;
 
-            
+        }
+
+        public function min(int $min){
+
+            if ( strlen( $this->value) < $min){
+            $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} is cant be less than $min charachters";
+
+            }
+        return $this;
 
         }
 
