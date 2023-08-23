@@ -16,7 +16,8 @@ include "layouts/breadcrumb.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST){
 
 $validation = new Validation; 
-$validation->setValueName('first name')->setValue($_POST['first_name'])->required();
+$validation->setValueName('first name')->setValue($_POST['first_name'])->required()->max(32);
+
 
 
 // if(empty($validation->getErrors())){

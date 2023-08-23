@@ -24,7 +24,20 @@ class Validation {
     }
 
 
+    
 
+
+        public function max(int $max){
+
+            if ( strlen( $this->value) > $max){
+            $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} is cant be greater than $max charachters";
+
+            }
+        return $this;
+
+            
+
+        }
 
 
     /**
@@ -88,17 +101,6 @@ class Validation {
 
 
 
-    /**
-     * Set the value of errors
-     *
-     * @return  self
-     */ 
-    public function setErrors($errors)
-    {
-        $this->errors = $errors;
-
-        return $this;
-    }
 }
 
 
