@@ -1,17 +1,21 @@
 <?php
     namespace App\Database\Models;
 
-    use App\Database\Models\Contract\crud;
+    use App\Database\Models\Contract\Crud;
 
-    include "../Models/Contract/Crud.php";
-    include "Model.php";
+    // include "../Models/Contract/Crud.php";
+    include "./App/Database/Models/Contract/Crud.php";
+
+    // include "Model.php";
+    include "./App/Database/Models/Model.php";
+
 
 class User extends Model implements Crud {
 
-    const TABLE = "user";
+    const TABLE = "users";
 
 
-    private $id,$first_name,$last_name,$phone,$email,$password,$gender,$status,$Verification_code,$email_verified_at,$created_at,$updated_at;	
+    private $id,$first_name,$last_name,$phone,$email,$password,$gender,$status,$verification_code,$email_verified_at,$created_at,$updated_at;	
 
 
 
@@ -130,7 +134,7 @@ class User extends Model implements Crud {
      */ 
     public function setPassword($password)
     {
-        $this->password = $password;
+        $this->password =password_hash($password,PASSWORD_BCRYPT);
 
         return $this;
     }
@@ -180,7 +184,7 @@ class User extends Model implements Crud {
      */ 
     public function getVerification_code()
     {
-        return $this->Verification_code;
+        return $this->verification_code;
     }
 
     /**
@@ -188,9 +192,9 @@ class User extends Model implements Crud {
      *
      * @return  self
      */ 
-    public function setVerification_code($Verification_code)
+    public function setVerification_code($verification_code)
     {
-        $this->Verification_code = $Verification_code;
+        $this->verification_code = $verification_code;
 
         return $this;
     }
@@ -257,6 +261,16 @@ class User extends Model implements Crud {
 
     public function create(){
 
+        $query  = "INSERT INTO " . self::TABLE . "(first_name,last_name,phone,email,password,gender,Verification_code) VALUES ( ? , ? , ? , ? , ? , ?, ?)";
+        
+        $stmt = $this->conn->prepare($query);
+
+        if( ! $stmt){
+            return false;
+        }
+        $bind = $stmt->bind_param('sssssss',$this->first_name,$this->last_name,$this->phone,$this->email,$this->password,$this->gender,$this->verification_code);
+
+        return $stmt->execute();
 
     }
     public function reade(){

@@ -2,7 +2,7 @@
 
 namespace App\Database\Models;
 
-use App\Database\Models\Contract\crud;
+use App\Database\Models\Contract\Crud;
 
 include "../Models/Contract/Crud.php";
 include "Model.php";

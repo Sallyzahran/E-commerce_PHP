@@ -2,7 +2,7 @@
 
 namespace App\Database\Models\Contract;
 
-interface crud {
+interface Crud {
 
 function create();
 function reade();
