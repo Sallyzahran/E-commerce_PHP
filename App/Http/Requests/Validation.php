@@ -69,6 +69,18 @@ class Validation {
 
     }
 
+    public function match( string $needle){
+
+       if ($this->value !== $needle){
+        $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} Dosnt match";
+
+       }
+
+ return $this;
+
+ }
+
+
 
 
 
