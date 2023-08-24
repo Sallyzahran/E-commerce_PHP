@@ -1,5 +1,5 @@
 <?php
-
+// session_start();
 use  App\Http\Requests\Validation;
  include "./App/Http/Requests/Validation.php";
 
@@ -16,7 +16,7 @@ include "layouts/breadcrumb.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST){
 
 $validation = new Validation; 
-$validation->setValueName('first name')->setValue($_POST['first_name'])->required()->max(32)->min(3);
+$validation->setValueName('first name')->setValue($_POST['first_name'])->required()->max(32)->min(3)->stringName();
 $validation->setValueName('last name')->setValue($_POST['last_name'])->required()->max(32)->min(3);
 $validation->setValueName('phone number')->setValue($_POST['phone_number'])->required()->max(11);
 $validation->setValueName('email')->setValue($_POST['email'])->required()->regex('/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/');
@@ -59,17 +59,17 @@ if(empty($validation->getErrors())){
                                     <div class="login-form-container">
                                         <div class="login-register-form">
                                             <form method="post">
-                                                <input type="text" name="first_name" placeholder="First Name">
+                                                <input type="text" name="first_name" placeholder="First Name" value="<?= $_POST['first_name'] ?? "" ?>">
                                                 <?=  $validation->getMessage('first name')  ??  " "  ?>
 
-                                                <input type="text" name="last_name" placeholder="Last Name">
+                                                <input type="text" name="last_name" placeholder="Last Name" value="<?= $_POST['last_name'] ?? "" ?>">
                                                 <?=  $validation->getMessage('last name')  ??  " "  ?>
 
 
-                                                <input type="number" name="phone_number" placeholder="Phone Number">
+                                                <input type="number" name="phone_number" placeholder="Phone Number" value="<?= $_POST['phone_number'] ?? "" ?>">
                                                 <?=  $validation->getMessage('phone number')  ??  " "  ?>
 
-                                                <input type="email" name="email" placeholder="Email">
+                                                <input type="email" name="email" placeholder="Email" value="<?= $_POST['email'] ?? "" ?>">
                                                 <?=  $validation->getMessage('email')  ??  " "  ?>
 
                                                 <input type="password" name="password" placeholder="Password">

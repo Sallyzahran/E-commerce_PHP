@@ -80,6 +80,22 @@ class Validation {
 
  }
 
+ public function stringName(){
+
+    if(!is_string($this->value)) {
+
+    $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} is invalid";
+    }
+return $this;
+
+
+}
+
+
+
+
+
+ 
 
 
 
