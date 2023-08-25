@@ -1,3 +1,11 @@
+
+<?php
+
+session_start();
+
+?>
+
+
 <header class="header-area gray-bg clearfix">
             <div class="header-bottom">
                 <div class="container">
@@ -71,7 +79,28 @@
                                         </ul>
                                     </nav>
                                 </div>
+
+                                <?php
+
+
+                                    if(isset($_SESSION['user'])) {
+                                    ?>
+
+
 								<div class="header-currency">
+									<span class="digit"> Welcome <?= $_SESSION['user']->first_name?> <i class="ti-angle-down"></i></span>
+									<div class="dollar-submenu">
+										<ul>
+											<li><a href="profile.php">Profile</a></li>
+											<li><a href="logout.php">Log Out</a></li>
+										
+										</ul>
+									</div>
+								</div>
+
+                                <?php } else { ?>
+
+                                    <div class="header-currency">
 									<span class="digit">Welcome <i class="ti-angle-down"></i></span>
 									<div class="dollar-submenu">
 										<ul>
@@ -81,6 +110,8 @@
 										</ul>
 									</div>
 								</div>
+
+                                    <?php } ?>
                                 <div class="header-cart">
                                     <a href="#">
                                         <div class="cart-icon">

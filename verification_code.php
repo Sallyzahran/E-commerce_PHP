@@ -43,6 +43,7 @@ $result =  $user->checkEmail();
 
     if($user->UpdateEmailVerified()){
         $success =  "<div class='alert alert-success text-center'>Correct You Will Redirect To Home Page</div>";
+        $_SESSION['user'] = $result->fetch_object();
         header("refresh:5;url=index.php");
         
 } else {
@@ -105,9 +106,13 @@ $result =  $user->checkEmail();
             </div>
         </div>
        
-        
+     
+
         <?php
-include "layouts/scripts.php";
+     include "layouts/scripts.php";
+
+
+
 
 
 
