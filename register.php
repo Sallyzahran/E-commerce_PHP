@@ -24,7 +24,8 @@ $validation->setValueName('last name')->setValue($_POST['last_name'])->required(
 $validation->setValueName('phone number')->setValue($_POST['phone_number'])->required()->max(11);
 $validation->setValueName('email')->setValue($_POST['email'])->required()->unique('users','email')
 ->regex('/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/');
-$validation->setValueName('password')->setValue($_POST['password'])->required()->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/');
+$validation->setValueName('password')->setValue($_POST['password'])->required()->unique('users','password')
+->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/');
 $validation->setValueName('confirm password')->setValue($_POST['confirm_password'])->required()->match($_POST['password'])->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/');
 $validation->setValueName('gender')->setValue($_POST['gender'])->required();
 
