@@ -10,7 +10,7 @@ class Connection {
     private string $db_username = 'sallyz';
     private string $db_password = '123';
     private string $db_name = 'ecommerce_php';
-    protected \mysqli $conn;
+    public \mysqli $conn;
 
 
     public function __construct()

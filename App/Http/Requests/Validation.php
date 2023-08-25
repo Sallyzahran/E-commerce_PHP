@@ -2,6 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Database\Models\Model;
+include_once "./App/Database/Models/Model.php";
+
+
 class Validation {
 
     private $value;
@@ -91,13 +95,43 @@ return $this;
 
 }
 
+        public function unique(string $table, string $column){
+
+        $model = new Model;
+        
+        $stmt = $model->conn->prepare(" SELECT * FROM {$table} WHERE {$column} = ?  ");
+          $stmt->bind_param('s',$this->value);
+          $stmt->execute();
+
+           $result = $stmt->get_result();
+           if($result->num_rows == 1){
+        $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} is already in use";
+
+           } 
+           return $this;
 
 
+        }
 
+        public function exist(string $table, string $column){
 
- 
-
-
+            $model = new Model;
+            
+            $stmt = $model->conn->prepare(" SELECT * FROM {$table} WHERE {$column} = ?  ");
+              $stmt->bind_param('s',$this->value);
+              $stmt->execute();
+    
+               $result = $stmt->get_result();
+               if($result->num_rows == 0){
+            $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} is not exist";
+    
+               } 
+               return $this;
+    
+    
+            }
+                
+            
 
 
     /**

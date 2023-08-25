@@ -5,7 +5,7 @@ namespace App\Database\Models;
 use App\Database\Config\Connection;
 
 // include "../../Database/Config/Connection.php";
-include "./App/Database/Config/Connection.php";
+include_once "./App/Database/Config/Connection.php";
 
 class Model extends Connection {
 

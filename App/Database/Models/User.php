@@ -4,10 +4,10 @@
     use App\Database\Models\Contract\Crud;
 
     // include "../Models/Contract/Crud.php";
-    include "./App/Database/Models/Contract/Crud.php";
+    include_once "./App/Database/Models/Contract/Crud.php";
 
     // include "Model.php";
-    include "./App/Database/Models/Model.php";
+    include_once "./App/Database/Models/Model.php";
 
 
 class User extends Model implements Crud {

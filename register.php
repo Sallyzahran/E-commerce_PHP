@@ -4,7 +4,7 @@ use  App\Http\Requests\Validation;
 use App\Database\Models\Contract\Crud;
 use App\Database\Models\User;
 
- include "./App/Http/Requests/Validation.php";
+ include_once "./App/Http/Requests/Validation.php";
 
 $title = "Register";
 
@@ -22,7 +22,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST){
 $validation->setValueName('first name')->setValue($_POST['first_name'])->required()->max(32)->min(3)->stringName();
 $validation->setValueName('last name')->setValue($_POST['last_name'])->required()->max(32)->min(3);
 $validation->setValueName('phone number')->setValue($_POST['phone_number'])->required()->max(11);
-$validation->setValueName('email')->setValue($_POST['email'])->required()->regex('/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/');
+$validation->setValueName('email')->setValue($_POST['email'])->required()->unique('users','email')
+->regex('/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/');
 $validation->setValueName('password')->setValue($_POST['password'])->required()->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/');
 $validation->setValueName('confirm password')->setValue($_POST['confirm_password'])->required()->match($_POST['password'])->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/');
 $validation->setValueName('gender')->setValue($_POST['gender'])->required();
@@ -31,7 +32,7 @@ $validation->setValueName('gender')->setValue($_POST['gender'])->required();
 if (empty($validation->getErrors())){
 
 $verification_code = rand(100000,999999);
-include "./App/Database/Models/User.php";
+include_once "./App/Database/Models/User.php";
 
 
 
@@ -53,10 +54,6 @@ if ($user->create()){
 }
 
 }
-
-
-
-
 
 
 ?>
