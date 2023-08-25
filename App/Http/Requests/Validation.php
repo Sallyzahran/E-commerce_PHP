@@ -62,10 +62,11 @@ class Validation {
         }
 
 
-        public function regex( string $pattern){
+        public function regex( string $pattern , $message = null){
 
            if (!preg_match($pattern,$this->value)){
-            $this->errors[$this->valueName][__FUNCTION__] = "{$this->valueName} dosnt match";
+            $this->errors[$this->valueName][__FUNCTION__] =  $message ?? "{$this->valueName} invalid";
+
 
            }
 

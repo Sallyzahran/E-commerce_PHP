@@ -25,7 +25,7 @@ $validation->setValueName('phone number')->setValue($_POST['phone_number'])->req
 $validation->setValueName('email')->setValue($_POST['email'])->required()->unique('users','email')
 ->regex('/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/');
 $validation->setValueName('password')->setValue($_POST['password'])->required()->unique('users','password')
-->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/');
+->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/','Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character');
 $validation->setValueName('confirm password')->setValue($_POST['confirm_password'])->required()->match($_POST['password'])->regex('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/');
 $validation->setValueName('gender')->setValue($_POST['gender'])->required();
 
