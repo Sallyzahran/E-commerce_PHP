@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 use  App\Http\Requests\Validation;
 use App\Database\Models\Contract\Crud;
 use App\Database\Models\User;
@@ -44,7 +44,10 @@ $user->setFirst_name($_POST['first_name'])->setLast_name($_POST['last_name'])->s
 
 if ($user->create()){
 
-    echo "ok";
+    $_SESSION['email'] = $_POST['email'];
+
+    header("Location:verification_code.php");
+
 }  else {
 
     $error =  "<div class='alert alert-danger text-center'>somthing went wrong</div>";

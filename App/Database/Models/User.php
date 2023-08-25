@@ -285,4 +285,31 @@ class User extends Model implements Crud {
   
       
     }
+
+    public function checkEmail(){
+
+        $query = "SELECT * FROM " . self::TABLE . " WHERE email = ? AND Verification_code = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('si',$this->email, $this->verification_code);
+        $stmt->execute();
+
+        return $stmt->get_result();
+
+    }
+
+
+
+    public function UpdateEmailVerified(){
+
+        $query = "UPDATE ". self::TABLE . " SET email_verified_at = ? WHERE email = ? ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ss',$this->email_verified_at,$this->email );
+        return $stmt->execute();
+
+
+    }
+
+
+
+
 }
