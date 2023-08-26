@@ -298,6 +298,18 @@ class User extends Model implements Crud {
     }
 
 
+    public function checkEmailExist(){
+
+        $query = "SELECT * FROM " . self::TABLE . " WHERE email = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('s',$this->email);
+        $stmt->execute();
+
+        return $stmt->get_result();
+
+    }
+
+
 
     public function UpdateEmailVerified(){
 
