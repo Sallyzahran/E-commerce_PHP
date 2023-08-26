@@ -1,7 +1,6 @@
 
 <?php
 // session_start();
-include "./App/Http/Middlewares/Guest.php";
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 $title = "Login";
@@ -10,6 +9,8 @@ use App\Http\Requests\Validation;
 use App\Database\Models\User;
 
 include "layouts/header.php";
+include "./App/Http/Middlewares/Guest.php";
+
 include "layouts/navbar.php";
 include "layouts/breadcrumb.php";
 include "./App/Http/Requests/Validation.php";

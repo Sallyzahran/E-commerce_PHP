@@ -9,6 +9,7 @@ use App\Database\Models\User;
 $title = "Register";
 
 include "layouts/header.php";
+include "./App/Http/Middlewares/Guest.php";
 include "layouts/navbar.php";
 include "layouts/breadcrumb.php";
 
