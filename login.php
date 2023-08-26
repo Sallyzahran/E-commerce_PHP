@@ -1,6 +1,7 @@
 
 <?php
-
+// session_start();
+include "./App/Http/Middlewares/Guest.php";
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 $title = "Login";
@@ -39,8 +40,7 @@ include_once "./App/Database/Models/User.php";
 
                 if(! is_null($userData->email_verified_at)){
 
-                $_SESSION['user'] = $result->fetch_object();
-
+                $_SESSION['user'] = $userData;
                     header("Location:index.php"); die;
 
                 }else{
