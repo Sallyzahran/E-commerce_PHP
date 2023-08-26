@@ -4,12 +4,12 @@ use  App\Http\Requests\Validation;
 use App\Database\Models\Contract\Crud;
 use App\Database\Models\User;
 
-include "./App/Http/Middlewares/Auth.php";
 //  include_once "./App/Http/Requests/Validation.php";
 
 $title = "Profile";
 
 include "layouts/header.php";
+include "./App/Http/Middlewares/Auth.php";
 include "layouts/navbar.php";
 include "layouts/breadcrumb.php";
 
