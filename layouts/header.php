@@ -1,6 +1,23 @@
 <?php
 
 ob_start();
+session_start();
+
+use App\Database\Models\User;
+
+if(isset($_COOKIE['remember_me'])){
+
+include "./App/Database/Models/User.php";
+
+$user = new User;
+
+$result = $user->setEmail($_COOKIE['remember_me'])->checkEmailExist();
+
+    $_SESSION['user'] = $result->fetch_object();
+ }
+
+
+
 ?>
 
 

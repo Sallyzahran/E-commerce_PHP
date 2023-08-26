@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 use  App\Http\Requests\Validation;
 use App\Database\Models\Contract\Crud;
 use App\Database\Models\User;

@@ -8,12 +8,12 @@ $title = "Login";
 use App\Http\Requests\Validation;
 use App\Database\Models\User;
 
-include "layouts/header.php";
-include "./App/Http/Middlewares/Guest.php";
+include_once "layouts/header.php";
+include_once "./App/Http/Middlewares/Guest.php";
 
-include "layouts/navbar.php";
-include "layouts/breadcrumb.php";
-include "./App/Http/Requests/Validation.php";
+include_once "layouts/navbar.php";
+include_once "layouts/breadcrumb.php";
+include_once "./App/Http/Requests/Validation.php";
 
 
 
@@ -42,6 +42,12 @@ include_once "./App/Database/Models/User.php";
                 if(! is_null($userData->email_verified_at)){
 
                 $_SESSION['user'] = $userData;
+
+                if( isset($_POST['remember_me'])){
+
+                    setcookie('remember_me',$_POST['email'],time() + 86400 * 365 , '/');
+                }
+
                     header("Location:index.php"); die;
 
                 }else{
@@ -93,7 +99,11 @@ include_once "./App/Database/Models/User.php";
                                                 <?=$validation->getMessage('email')?>
                                                 <input type="password" name="password" placeholder="Password">
                                                 <?=$validation->getMessage('password')?>
-
+                                                <div class="login-toggle-btn">
+                                                <input  name="remember_me" type="checkbox">
+                                                <label>Remember me</label>
+                                                <a href="forget-password.php">Forgot Password?</a>
+                                            </div>
                                                 <div class="button-box">
                                                     <button type="submit"><span>Login</span></button>
                                                 </div>
