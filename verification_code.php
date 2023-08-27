@@ -71,7 +71,6 @@ $result =  $user->checkEmail();
 }
 
 
-
 ?>
     
         <div class="login-register-area ptb-100">

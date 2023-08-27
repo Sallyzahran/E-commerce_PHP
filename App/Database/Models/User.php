@@ -334,6 +334,15 @@ class User extends Model implements Crud {
 
     }
 
+    public function UpdatePassword(){
+
+        $query = "UPDATE ". self::TABLE . " SET password = ? WHERE email = ? ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ss',$this->password,$this->email );
+        return $stmt->execute();
+
+    }
+
 
 
 }
