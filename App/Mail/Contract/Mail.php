@@ -19,7 +19,7 @@ protected PHPMailer $mail;
 
 
 
-private string $mailTo,$mailSubject,$mailBody,$mailFromName;
+protected string $mailTo,$mailSubject,$mailBody,$mailFromName;
 
 public function __construct($mailTo,$mailSubject,$mailBody,$mailFromName='Ecommerce')
 {
