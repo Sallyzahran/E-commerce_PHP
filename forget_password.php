@@ -4,6 +4,10 @@ session_start();
 use  App\Http\Requests\Validation;
 use App\Database\Models\User;
 
+use App\Mail\VerificationCode;
+
+include "App/Mail/VerificationCode.php";
+
 
 
  include_once "./App/Http/Requests/Validation.php";
@@ -44,9 +48,22 @@ $result =  $user->checkEmailExist();
     $user->setVerification_code($verification_code);
      if($user->UpdateVerificationCode()){
 
+
+    $mailSubject = "Reset Password ";
+    $mailBody = "Hello Dear . {$_POST['email']} <br> " . " Your Verification Code is " . $verification_code;
+    $verificationMail = new VerificationCode($_POST['email'],$mailSubject,$mailBody);
+
+  if($verificationMail->send()){
+
+
         $_SESSION['email'] = $_POST['email'];
 
         header("Location:verification_code.php?page=forget");
+  }else {
+    $error =  "<div class='alert alert-danger text-center'>somthing went wrong Please Try Again </div>";
+
+
+  }
      } else {
     $error =  "<div class='alert alert-danger text-center'>Somthing Went Wrong</div>";
 
