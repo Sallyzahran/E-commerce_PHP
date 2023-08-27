@@ -10,12 +10,19 @@ use App\Database\Models\User;
 $title = "verification";
 
 include "layouts/header.php";
+include "./App/Http/Middlewares/EmailChecker.php";
 
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $validation = new Validation; 
+
+$validation->setValueName('page')->setValue($_GET['page'] ?? null)->required()->in(['login','register','forget']);
+if ($validation->getErrors()){
+
+    header('Location:layouts/errors/notfound.php');die;
+}
 
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST){
 
@@ -48,6 +55,7 @@ $result =  $user->checkEmail();
     if($_GET['page'] == 'register' || $_GET['page'] == 'login' ){
         $success =  "<div class='alert alert-success text-center'>Correct You Will Redirect To Home Page</div>";
         $_SESSION['user'] = $result->fetch_object();
+        unset($_SESSION['email']);
         header("refresh:5;url=index.php");
     } elseif($_GET['page'] == 'forget'){
         $success =  "<div class='alert alert-success text-center'>Correct You Will Redirect To Add New Password</div>";
