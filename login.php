@@ -102,7 +102,7 @@ include_once "./App/Database/Models/User.php";
                                                 <div class="login-toggle-btn">
                                                 <input  name="remember_me" type="checkbox">
                                                 <label>Remember me</label>
-                                                <a href="forget-password.php">Forgot Password?</a>
+                                                <a href="forget_password.php">Forgot Password?</a>
                                             </div>
                                                 <div class="button-box">
                                                     <button type="submit"><span>Login</span></button>
