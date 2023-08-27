@@ -8,11 +8,13 @@ $title = "Login";
 use App\Http\Requests\Validation;
 use App\Database\Models\User;
 
-include_once "layouts/header.php";
 include_once "./App/Http/Middlewares/Guest.php";
+
+include_once "layouts/header.php";
 
 include_once "layouts/navbar.php";
 include_once "layouts/breadcrumb.php";
+
 include_once "./App/Http/Requests/Validation.php";
 
 
@@ -52,7 +54,7 @@ include_once "./App/Database/Models/User.php";
 
                 }else{
                   $_SESSION['email'] = $_POST['email'];
-                    header("Location:verification_code.php");
+                    header("Location:verification_code.php?page=login");
                 }
             }else{
         $error =  "<div class='alert alert-danger text-center'>Email or password is wrong</div>";

@@ -47,7 +47,7 @@ if ($user->create()){
 
     $_SESSION['email'] = $_POST['email'];
 
-    header("Location:verification_code.php");
+    header("Location:verification_code.php?page=register");
 
 }  else {
 

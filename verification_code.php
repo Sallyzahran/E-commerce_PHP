@@ -20,7 +20,7 @@ $validation = new Validation;
 if($_SERVER['REQUEST_METHOD'] == 'POST' && $_POST){
 
 
-$validation->setValueName('verification code')->setValue($_POST['verification_code'])->required()->regex('/^[0-9]{6}$/')->exist('users','Verification_code');
+$validation->setValueName('verification code')->setValue($_POST['verification_code'])->required()->regex( $_GET['page'] == 'forget' ?  '/^[0-9]{5}$/' : '/^[0-9]{6}$/')->exist('users','Verification_code');
 
 
     
@@ -39,18 +39,25 @@ $result =  $user->checkEmail();
 
    if( $result->num_rows ==1){
 
-    $user->setEmail_verified_at(date('Y-m-d H:i:s'));
+
+         $user->setEmail_verified_at(date('Y-m-d H:i:s'));
 
     if($user->UpdateEmailVerified()){
+
+
+    if($_GET['page'] == 'register' || $_GET['page'] == 'login' ){
         $success =  "<div class='alert alert-success text-center'>Correct You Will Redirect To Home Page</div>";
         $_SESSION['user'] = $result->fetch_object();
         header("refresh:5;url=index.php");
-        
-} else {
-    $error =  "<div class='alert alert-danger text-center'>Somthing Went Wrong</div>";
+    } elseif($_GET['page'] == 'forget'){
+        $success =  "<div class='alert alert-success text-center'>Correct You Will Redirect To Add New Password</div>";
+
+        header('refresh:5;url=reset_password.php');
+    
+            } else {
+          $error =  "<div class='alert alert-danger text-center'>Somthing Went Wrong</div>";
 
     }
-      
     
 }else{
 
@@ -61,6 +68,8 @@ $result =  $user->checkEmail();
 }
 
 }
+}
+
 
 
 ?>

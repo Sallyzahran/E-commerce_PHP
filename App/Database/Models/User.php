@@ -322,6 +322,18 @@ class User extends Model implements Crud {
     }
 
 
+    public function UpdateVerificationCode(){
+
+        $query = "UPDATE ". self::TABLE . " SET Verification_code = ? WHERE email = ? ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('is',$this->verification_code,$this->email );
+        return $stmt->execute();
+
+
+        
+
+    }
+
 
 
 }

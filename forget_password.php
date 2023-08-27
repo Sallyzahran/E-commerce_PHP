@@ -40,8 +40,20 @@ $result =  $user->checkEmailExist();
 
    if( $result->num_rows ==1){
 
-    $_SESSION['email'] = $_POST['email'];
-    header("Location:verification_code.php");
+    $verification_code = rand(10000,99999);
+    $user->setVerification_code($verification_code);
+     if($user->UpdateVerificationCode()){
+
+        $_SESSION['email'] = $_POST['email'];
+
+        header("Location:verification_code.php?page=forget");
+     } else {
+    $error =  "<div class='alert alert-danger text-center'>Somthing Went Wrong</div>";
+
+     }
+
+
+    
     
         
 } else {
