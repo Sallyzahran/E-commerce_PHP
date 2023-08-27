@@ -3,6 +3,9 @@ session_start();
 use  App\Http\Requests\Validation;
 use App\Database\Models\Contract\Crud;
 use App\Database\Models\User;
+use App\Mail\VerificationCode;
+
+include "App/Mail/VerificationCode.php";
 
  include_once "./App/Http/Requests/Validation.php";
 
@@ -45,9 +48,21 @@ $user->setFirst_name($_POST['first_name'])->setLast_name($_POST['last_name'])->s
 
 if ($user->create()){
 
+    $mailSubject = "verification Code ";
+    $mailBody = "Hello Dear . {$_POST['first_name']} " . " {$_POST['last_name']} <br>  Your Verification Code is " . $verification_code;
+    $verificationMail = new VerificationCode($_POST['email'],$mailSubject,$mailBody);
+
+  if($verificationMail->send()){
+
     $_SESSION['email'] = $_POST['email'];
 
     header("Location:verification_code.php?page=register");
+  } else{
+    $error =  "<div class='alert alert-danger text-center'>somthing went wrong Please Try Again </div>";
+
+
+  }
+ 
 
 }  else {
 

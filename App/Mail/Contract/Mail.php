@@ -31,7 +31,7 @@ $this->mailFromName = $mailFromName;
 
 $this->mail= new PHPMailer(true);
 
-    $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $this->mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
     $this->mail->isSMTP();                                            //Send using SMTP
     $this->mail->Host       = $this->mailHost;                     //Set the SMTP server to send through
     $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
