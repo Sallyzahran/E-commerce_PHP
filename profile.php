@@ -76,12 +76,17 @@ if(isset($_POST['change-profile'])){
     if(empty($media->getErrors())){
    include "./App/Database/Models/User.php";
 
+      if($_SESSION['user']->image != 'default.jpg'){
+
+          Media::delete('assets/img/users/'.$_SESSION['user']->image);
+      }
+
         $media->upload('assets/img/users/');
         $user = new User;
         $user->setImage($media->getFileNewName())->setEmail($_SESSION['user']->email);
         if($user->UpdateUserImage()){
 
-          
+
 
           $_SESSION['user']->image = $media->getFileNewName();
           // print_r( $_SESSION['user']->image); die;
