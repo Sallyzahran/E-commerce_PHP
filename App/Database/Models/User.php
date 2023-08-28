@@ -15,7 +15,7 @@ class User extends Model implements Crud {
     const TABLE = "users";
 
 
-    private $id,$first_name,$last_name,$phone,$email,$password,$gender,$status,$verification_code,$email_verified_at,$created_at,$updated_at;	
+    private $id,$first_name,$last_name,$phone,$email,$password,$gender,$status,$verification_code,$email_verified_at,$created_at,$updated_at,$image;	
 
 
 
@@ -351,5 +351,35 @@ class User extends Model implements Crud {
     }
 
 
+
+    /**
+     * Get the value of image
+     */ 
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Set the value of image
+     *
+     * @return  self
+     */ 
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+
+        public function UpdateUserImage(){
+
+            $query = "UPDATE ". self::TABLE . " SET image = ? WHERE email = ? ";
+            $stmt = $this->conn->prepare($query);
+            $stmt->bind_param('ss',$this->image,$this->email );
+            return $stmt->execute();
+    
+        }
 
 }
