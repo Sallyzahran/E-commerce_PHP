@@ -8,7 +8,7 @@
 use PHPMailer\PHPMailer\Exception;
 
 
-include "/opt/lampp/htdocs/ecommerce/vendor/phpmailer/phpmailer/src/Exception.php";
+require "/opt/lampp/htdocs/ecommerce/vendor/phpmailer/phpmailer/src/Exception.php";
 
 
  class VerificationCode extends Mail {

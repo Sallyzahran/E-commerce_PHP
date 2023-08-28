@@ -279,6 +279,13 @@ class User extends Model implements Crud {
     }
     public function update(){
   
+        $query = "UPDATE ". self::TABLE . " SET first_name = ? , last_name = ? , gender = ? WHERE email = ? ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ssss',$this->first_name,$this->last_name,$this->gender,$this->email );
+        return $stmt->execute();
+
+
+
       
     }
     public function delete(){
