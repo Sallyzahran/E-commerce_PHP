@@ -90,6 +90,7 @@ if(isset($_POST['change-profile'])){
 
           $_SESSION['user']->image = $media->getFileNewName();
           // print_r( $_SESSION['user']->image); die;
+          // print_r($_SESSION['user']->image);die;
 
     $imagesuccess =  "<div class='alert alert-success text-center'>Success Update Image</div>";
 
@@ -149,10 +150,10 @@ if(isset($_POST['change-profile'])){
                     }elseif($_SESSION['user']->gender == 'f'){
                       echo "female.jpg";
 
-                    }else{
-                     echo $_SESSION['user']->image;
                     }
-                  }
+                  }else{
+                    echo $_SESSION['user']->image;
+                   }
               ?>"
                 class="rounded-circle img-fluid"  alt="<?=$_SESSION['user']->first_name?>" style="width: 100px;" id="image" style="cursor: pointer"/>
             </div>
@@ -163,6 +164,7 @@ if(isset($_POST['change-profile'])){
                     <button type="submit" class="my-5 d-none" name="change-profile" id="change-button" >Change</button>
 
                     </div>
+
 
                     <?=$media->getError('size')?>
                     <?=$media->getError('extension')?>
