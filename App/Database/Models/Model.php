@@ -11,10 +11,10 @@ class Model extends Connection {
 
     const TABLE = '';
 
-    public static function all(){
-
-        $query = "SELECT * FROM " . static::TABLE ;
-        echo $query;
+    public function all($columns = ['*']){
+        $selected = implode(' , ',$columns);
+        $query = "SELECT {$selected} FROM " . static::TABLE ;
+        return $this->conn->query($query);
     }
 
     public static function find(int $id){
