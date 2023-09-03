@@ -2,6 +2,22 @@
 <?php
 
 session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+use App\Database\Models\Category;
+use App\Database\Models\SubCategory;
+
+include "./App/Database/Models/Category.php";
+include "./App/Database/Models/SubCategory.php";
+
+
+$categoryObj = new Category;
+$categories = $categoryObj->all(['id','name_en'])->fetch_all(MYSQLI_ASSOC);
+
+$subcategoryObj = new SubCategory;
+
+
+
 
 ?>
 
@@ -27,50 +43,25 @@ session_start();
                                             </li>
                                             <li class="mega-menu-position top-hover"><a href="shop.php">shop</a>
                                                 <ul class="mega-menu">
+
+                                                <?php foreach ($categories as $category) { ?>
                                                     <li>
                                                         <ul>
-                                                            <li class="mega-menu-title">Categories 01</li>
-                                                            <li><a href="shop.php">Aconite</a></li>
-                                                            <li><a href="shop.php">Ageratum</a></li>
-                                                            <li><a href="shop.php">Allium</a></li>
-                                                            <li><a href="shop.php">Anemone</a></li>
-                                                            <li><a href="shop.php">Angelica</a></li>
-                                                            <li><a href="shop.php">Angelonia</a></li>
+                                                            <li class="mega-menu-title"><?=$category['name_en']?></li>
+
+                                                            <?php 
+                                                            $subcategoryObj->setCategory_id($category['id']);
+                                                            $subcategories = $subcategoryObj->allSubCategories()->fetch_all(MYSQLI_ASSOC);
+                                                            foreach ($subcategories as $subcategory) {
+                                                            ?>
+                                                            <li><a href="shop.php"><?= $subcategory['name_en'] ?></a></li>
+                                                            <?php } ?>
+                                                           
                                                         </ul>
                                                     </li>
-                                                    <li>
-                                                        <ul>
-                                                            <li class="mega-menu-title">Categories 02</li>
-                                                            <li><a href="shop.php">Balsam</a></li>
-                                                            <li><a href="shop.php">Baneberry</a></li>
-                                                            <li><a href="shop.php">Bee Balm</a></li>
-                                                            <li><a href="shop.php">Begonia</a></li>
-                                                            <li><a href="shop.php">Bellflower</a></li>
-                                                            <li><a href="shop.php">Bergenia</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <ul>
-                                                            <li class="mega-menu-title">Categories 03</li>
-                                                            <li><a href="shop.php">Caladium</a></li>
-                                                            <li><a href="shop.php">Calendula</a></li>
-                                                            <li><a href="shop.php">Carnation</a></li>
-                                                            <li><a href="shop.php">Catmint</a></li>
-                                                            <li><a href="shop.php">Celosia</a></li>
-                                                            <li><a href="shop.php">Chives</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <ul>
-                                                            <li class="mega-menu-title">Categories 04</li>
-                                                            <li><a href="shop.php">Daffodil</a></li>
-                                                            <li><a href="shop.php">Dahlia</a></li>
-                                                            <li><a href="shop.php">Daisy</a></li>
-                                                            <li><a href="shop.php">Diascia</a></li>
-                                                            <li><a href="shop.php">Dusty Miller</a></li>
-                                                            <li><a href="shop.php">Dame’s Rocket</a></li>
-                                                        </ul>
-                                                    </li>
+                                                
+                                                  <?php } ?>
+                                             
                                                 </ul>
                                             </li>
 
@@ -91,6 +82,7 @@ session_start();
 									<span class="digit"> Welcome <?= $_SESSION['user']->first_name?> <i class="ti-angle-down"></i></span>
 									<div class="dollar-submenu">
 										<ul>
+                                            
 											<li><a href="profile.php">Profile</a></li>
 											<li><a href="logout.php">Log Out</a></li>
 										

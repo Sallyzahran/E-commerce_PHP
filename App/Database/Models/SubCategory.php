@@ -4,22 +4,20 @@ namespace App\Database\Models;
 
 use App\Database\Models\Contract\Crud;
 
-include "./App/Database/Models/Contract/Crud.php";
-include "Model.php";
+
+// include "./App/Database/Models/Contract/Crud.php";
+
+// include "Model.php";
 
 
 
-class Category extends Model implements Crud{
+class SubCategory extends Model implements Crud{
 
-    const TABLE = "categories";
+    const TABLE = "subcategories";
 
-    private $id,$name_en,$name_ar,$image,$status,$created_at,$updated_at;
+    private $id,$name_en,$name_ar,$image,$status,$created_at,$updated_at,$category_id;
     
     
-
-
-
-
 
     public function create(){
 
@@ -180,4 +178,45 @@ class Category extends Model implements Crud{
 
         return $this;
     }
+
+    /**
+     * Get the value of category_id
+     */ 
+    public function getCategory_id()
+    {
+        return $this->category_id;
+    }
+
+    /**
+     * Set the value of category_id
+     *
+     * @return  self
+     */ 
+    public function setCategory_id($category_id)
+    {
+        $this->category_id = $category_id;
+
+        return $this;
+    }
+
+
+
+    public function allSubCategories(){
+
+        $query = "SELECT * FROM " . self::TABLE . " WHERE category_id = ?";
+        $stmt = $this->conn->prepare($query);
+        // if($stmt){
+        //     return false ; 
+        // }
+
+        $stmt->bind_param('i',$this->category_id);
+        $stmt->execute();
+        return $stmt->get_result();
+    }
+
+
+
+
+
+
 }
