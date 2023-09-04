@@ -35,7 +35,7 @@ include_once "./App/Database/Models/User.php";
 
         $user->setEmail($_POST['email']);
         $result = $user->checkEmailExist();
-
+ 
         if($result->num_rows == 1){
 
             $userData = $result->fetch_object(); 
