@@ -47,14 +47,15 @@ $subcategoryObj = new SubCategory;
                                                 <?php foreach ($categories as $category) { ?>
                                                     <li>
                                                         <ul>
-                                                            <li class="mega-menu-title"><?=$category['name_en']?></li>
+                                                            <li class="mega-menu-title ">
+                                                            <a class="font-weight-bold " href="shop.php?category=<?=$category['id']?>"><?=$category['name_en']?></a></li>
 
                                                             <?php 
                                                             $subcategoryObj->setCategory_id($category['id']);
                                                             $subcategories = $subcategoryObj->allSubCategories()->fetch_all(MYSQLI_ASSOC);
                                                             foreach ($subcategories as $subcategory) {
                                                             ?>
-                                                            <li><a href="shop.php"><?= $subcategory['name_en'] ?></a></li>
+                                                            <li><a href="shop.php?subcategory=<?=$subcategory['id']?>"><?= $subcategory['name_en'] ?></a></li>
                                                             <?php } ?>
                                                            
                                                         </ul>

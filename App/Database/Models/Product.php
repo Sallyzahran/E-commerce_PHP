@@ -8,7 +8,7 @@ use App\Database\Models\Contract\Crud;
 
 class Product extends Model implements Crud {
 
-    const TABLE = "products";
+    const TABLE = "product_details";
 
   private $id,$name_en,$name_ar,$image,$price,$details_en,$details_ar,$quantity,$status,$created_at,$updated_at,$brand_id,$subcategory_id ;
 
@@ -296,9 +296,6 @@ class Product extends Model implements Crud {
 }
 
 
-
-
-Product::find(10);
 
 
 

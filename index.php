@@ -51,7 +51,7 @@ ini_set('display_errors', 1);
 					?>
                     <div class="col-3">
                         <div class="product-img">
-                            <a href="product-details.php">
+                            <a href="shop.php?brand=<?=$brand['id']?>">
                                 <img alt="" src="assets/img/brands_logo/<?=$brand['image']?>">
                             </a>
                             <div class="product-action">

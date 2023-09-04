@@ -20,10 +20,17 @@ class Model extends Connection {
         return $this->conn->query($query);
     }
 
-    public static function find(int $id){
+    public function find(int $id){
 
-        $query = "SELECT * FROM " . static::TABLE . "WHERE id = {$id}";
-        echo $query;
+        $query = "SELECT * FROM " . static::TABLE . " WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        if(!$stmt){
+            return false;
+        }
+        $stmt->bind_param('i',$id);
+        $stmt->execute();
+        return $stmt->get_result();
+
     
     }
 

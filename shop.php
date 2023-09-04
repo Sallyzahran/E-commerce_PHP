@@ -8,11 +8,99 @@ include_once "layouts/breadcrumb.php";
 
 
 use App\Database\Models\Product;
+use App\Database\Models\Brand;
+use App\Database\Models\Category;
+use App\Database\Models\SubCategory;
+
+
+
+
+
 
 include "./App/Database/Models/Product.php";
+include "./App/Database/Models/Brand.php";
+
 
 $productObj = new Product;
-$products=$productObj->all(['id','name_en','image','price','details_en'],['status','=',1])->fetch_all(MYSQLI_ASSOC);
+
+
+if($_GET){
+
+    if(isset($_GET['brand'])){
+        if(is_numeric($_GET['brand'])){
+            $brandObj = new Brand;
+            if($brandObj->find($_GET['brand'])->num_rows == 1){
+
+                $products=$productObj->all(['id','name_en','image','price','details_en'],['brand_id','=',$_GET['brand']])->fetch_all(MYSQLI_ASSOC);
+
+            }else{
+            header("Loctaion:layouts/notfound.php");
+
+            }
+
+
+        }else{
+            header("Loctaion:layouts/notfound.php");
+
+
+        }
+
+
+    }elseif(isset($_GET['subcategory'])){
+        if(is_numeric($_GET['subcategory'])){
+            $subCategoryObj = new SubCategory;
+
+            if($subCategoryObj->find($_GET['subcategory'])->num_rows == 1){
+                $products=$productObj->all(['id','name_en','image','price','details_en'],['subcategory_id','=',$_GET['subcategory']])->fetch_all(MYSQLI_ASSOC);
+
+            }else{
+            header("Loctaion:layouts/notfound.php");
+
+            }
+
+
+        }else{
+            header("Loctaion:layouts/notfound.php");
+
+
+        }
+
+
+    }elseif(isset($_GET['category'])){
+        if(is_numeric($_GET['category'])){
+            $categoryObj = new Category;
+
+            if($categoryObj->find($_GET['category'])->num_rows == 1){
+                $products=$productObj->all(['id','name_en','image','price','details_en'],['category_id','=',$_GET['category']])->fetch_all(MYSQLI_ASSOC);
+
+            }else{
+            header("Loctaion:layouts/notfound.php");
+
+            }
+
+
+        }else{
+            header("Loctaion:layouts/notfound.php");
+
+
+        }
+
+    }else{
+        header("Loctaion:layouts/notfound.php");
+    }
+
+
+}else{
+    $products=$productObj->all(['id','name_en','image','price','details_en'],['status','=',1])->fetch_all(MYSQLI_ASSOC);
+
+
+}
+
+
+
+
+
+
 
 
 
@@ -58,7 +146,7 @@ $products=$productObj->all(['id','name_en','image','price','details_en'],['statu
                                         <div class="product-wrapper">
                                             <div class="product-img">
                                                 <a href="product-details.php">
-                                                    <img alt="" src="assets/img/product/product-1.jpg">
+                                                    <img alt="" src="assets/img/product/<?=$product['image']?>">
                                                 </a>
                                                 <div class="product-action">
                                                     <a class="action-wishlist" href="#" title="Wishlist">
