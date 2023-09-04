@@ -4,8 +4,6 @@ namespace App\Database\Models;
 
 use App\Database\Models\Contract\Crud;
 
-include "../Models/Contract/Crud.php";
-include "Model.php";
 
 
 class Product extends Model implements Crud {
