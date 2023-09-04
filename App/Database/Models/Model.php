@@ -11,11 +11,17 @@ class Model extends Connection {
 
     const TABLE = '';
 
-    public function all(array $columns = ['*'],array $filter = []){
+    public function all(array $columns = ['*'],array $filters = []){
         $selected = implode(' , ',$columns);
         $query = "SELECT {$selected} FROM " . static::TABLE ;
-        if(!empty($filter)){
-            $query .= " WHERE  {$filter[0]} {$filter[1]}  {$filter[2]}";
+        if(!empty($filters)){
+            $query .= " WHERE " ;
+            foreach ($filters AS $index => $filter) {
+            if ($index != 0){
+                $query .= " AND ";
+            }
+            $query .= " {$filter[0]} {$filter[1]}  {$filter[2]}";
+        }
         }
         return $this->conn->query($query);
     }
