@@ -11,9 +11,12 @@ class Model extends Connection {
 
     const TABLE = '';
 
-    public function all($columns = ['*']){
+    public function all(array $columns = ['*'],array $filter = []){
         $selected = implode(' , ',$columns);
         $query = "SELECT {$selected} FROM " . static::TABLE ;
+        if(!empty($filter)){
+            $query .= " WHERE  {$filter[0]} {$filter[1]}  {$filter[2]}";
+        }
         return $this->conn->query($query);
     }
 

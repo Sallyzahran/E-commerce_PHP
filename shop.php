@@ -12,7 +12,7 @@ use App\Database\Models\Product;
 include "./App/Database/Models/Product.php";
 
 $productObj = new Product;
-$products=$productObj->all()->fetch_all(MYSQLI_ASSOC);
+$products=$productObj->all(['id','name_en','image','price','details_en'],['status','=',1])->fetch_all(MYSQLI_ASSOC);
 
 
 
