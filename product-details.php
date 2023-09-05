@@ -127,9 +127,9 @@ if($_GET){
 
 
                                     <li class="categories-title">Categories:</li>
-                                    <li><a href="#"><?=$product->category_name_en?>,</a></li>
-                                    <li><a href="#"><?=$product->subcategory_name_en?>, </a></li>
-                                    <li><a href="#"><?=$product->brand_name_en?>,</a></li>
+                                    <li><a href="shop.php?category=<?=$product->category_id?>"><?=$product->category_name_en?>,</a></li>
+                                    <li><a href="shop.php?subcategory=<?=$product->subcategory_id?>"><?=$product->subcategory_name_en?>, </a></li>
+                                    <li><a href="shop.php?brand=<?=$product->brand_id?>"><?=$product->brand_name_en?>,</a></li>
                               
                                 </ul>
                             </div>

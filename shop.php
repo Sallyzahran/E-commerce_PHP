@@ -34,13 +34,13 @@ if($_GET){
                 $products=$productObj->all(['id','name_en','image','price','details_en'],[['brand_id','=',$_GET['brand']],['status','=',1]])->fetch_all(MYSQLI_ASSOC);
 
             }else{
-            header("Loctaion:layouts/notfound.php");
+            header("Loctaion:layouts/errors/notfound.php");die;
 
             }
 
 
         }else{
-            header("Loctaion:layouts/notfound.php");
+            header("Loctaion:layouts/errors/notfound.php");die;
 
 
         }
@@ -54,13 +54,13 @@ if($_GET){
                 $products=$productObj->all(['id','name_en','image','price','details_en'],[['subcategory_id','=',$_GET['subcategory']],['status','=',1]])->fetch_all(MYSQLI_ASSOC);
 
             }else{
-            header("Loctaion:layouts/notfound.php");
+            header("Loctaion:layouts/errors/notfound.php");
 
             }
 
 
         }else{
-            header("Loctaion:layouts/notfound.php");
+            header("Loctaion:layouts/errors/notfound.php");
 
 
         }
@@ -74,19 +74,19 @@ if($_GET){
                 $products=$productObj->all(['id','name_en','image','price','details_en'],[['category_id','=',$_GET['category']],['status','=',1]])->fetch_all(MYSQLI_ASSOC);
 
             }else{
-            header("Loctaion:layouts/notfound.php");
+            header("Loctaion:layouts/errors/notfound.php");
 
             }
 
 
         }else{
-            header("Loctaion:layouts/notfound.php");
+            header("Loctaion:layouts/errors/notfound.php");
 
 
         }
 
     }else{
-        header("Loctaion:layouts/notfound.php");
+        header("Loctaion:layouts/errors/notfound.php");
     }
 
 
