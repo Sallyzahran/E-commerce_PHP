@@ -1,350 +1,71 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-    
+<?php
 
-<head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Sabujcha - Matcha eCommerce Bootstrap4 Template</title>
-        <meta name="description" content="">
-        <meta name="robots" content="noindex, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Favicon -->
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-		
-		<!-- all css here -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/css/slick.css">
-        <link rel="stylesheet" href="assets/css/chosen.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/themify-icons.css">
-        <link rel="stylesheet" href="assets/css/ionicons.min.css">
-		<link rel="stylesheet" href="assets/css/jquery-ui.css">
-        <link rel="stylesheet" href="assets/css/meanmenu.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
-        <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
-    </head>
-    <body>
-        <!-- header start -->
-        <header class="header-area gray-bg clearfix">
-            <div class="header-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="logo">
-                                <a href="index.php">
-                                    <img alt="" src="assets/img/logo/logo.png">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-8 col-6">
-                            <div class="header-bottom-right">
-                                <div class="main-menu">
-                                    <nav>
-                                        <ul>
-                                            <li class="top-hover"><a href="index.php">home</a>
-                                                <ul class="submenu">
-                                                    <li><a href="index.php">home version 1</a></li>
-                                                    <li><a href="index-2.php">home version 2</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="about-us.php">about</a></li>
-                                            <li class="mega-menu-position top-hover"><a href="shop.php">shop</a>
-                                                <ul class="mega-menu">
-                                                    <li>
-                                                        <ul>
-                                                            <li class="mega-menu-title">Categories 01</li>
-                                                            <li><a href="shop.php">Aconite</a></li>
-                                                            <li><a href="shop.php">Ageratum</a></li>
-                                                            <li><a href="shop.php">Allium</a></li>
-                                                            <li><a href="shop.php">Anemone</a></li>
-                                                            <li><a href="shop.php">Angelica</a></li>
-                                                            <li><a href="shop.php">Angelonia</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <ul>
-                                                            <li class="mega-menu-title">Categories 02</li>
-                                                            <li><a href="shop.php">Balsam</a></li>
-                                                            <li><a href="shop.php">Baneberry</a></li>
-                                                            <li><a href="shop.php">Bee Balm</a></li>
-                                                            <li><a href="shop.php">Begonia</a></li>
-                                                            <li><a href="shop.php">Bellflower</a></li>
-                                                            <li><a href="shop.php">Bergenia</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <ul>
-                                                            <li class="mega-menu-title">Categories 03</li>
-                                                            <li><a href="shop.php">Caladium</a></li>
-                                                            <li><a href="shop.php">Calendula</a></li>
-                                                            <li><a href="shop.php">Carnation</a></li>
-                                                            <li><a href="shop.php">Catmint</a></li>
-                                                            <li><a href="shop.php">Celosia</a></li>
-                                                            <li><a href="shop.php">Chives</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <ul>
-                                                            <li class="mega-menu-title">Categories 04</li>
-                                                            <li><a href="shop.php">Daffodil</a></li>
-                                                            <li><a href="shop.php">Dahlia</a></li>
-                                                            <li><a href="shop.php">Daisy</a></li>
-                                                            <li><a href="shop.php">Diascia</a></li>
-                                                            <li><a href="shop.php">Dusty Miller</a></li>
-                                                            <li><a href="shop.php">Dame’s Rocket</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="top-hover"><a href="blog-left-sidebar.php">blog</a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog-masonry.php">Blog Masonry</a></li>
-                                                    <li><a href="#">Blog Standard <span><i class="ion-ios-arrow-right"></i></span></a>
-                                                        <ul class="lavel-menu">
-                                                            <li><a href="blog-left-sidebar.php">left sidebar</a></li>
-                                                            <li><a href="blog-right-sidebar.php">right sidebar</a></li>
-                                                            <li><a href="blog-no-sidebar.php">no sidebar</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Post Types <span><i class="ion-ios-arrow-right"></i></span> </a>
-                                                        <ul class="lavel-menu">
-                                                            <li><a href="blog-details-standerd.php">Standard post</a></li>
-                                                            <li><a href="blog-details-audio.php">audio post</a></li>
-                                                            <li><a href="blog-details-video.php">video post</a></li>
-                                                            <li><a href="blog-details-gallery.php">gallery post</a></li>
-                                                            <li><a href="blog-details-link.php">link post</a></li>
-                                                            <li><a href="blog-details-quote.php">quote post</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="top-hover"><a href="#">pages</a>
-                                                <ul class="submenu">
-                                                    <li><a href="about-us.php">about us </a></li>
-                                                    <li><a href="shop.php">shop Grid</a></li>
-                                                    <li><a href="shop-list.php">shop list</a></li>
-                                                    <li><a href="product-details.php">product details</a></li>
-                                                    <li><a href="cart-page.php">cart page</a></li>
-                                                    <li><a href="checkout.php">checkout</a></li>
-                                                    <li><a href="wishlist.php">wishlist</a></li>
-                                                    <li><a href="my-account.php">my account</a></li>
-                                                    <li><a href="login-register.php">login / register</a></li>
-                                                    <li><a href="contact.php">contact</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.php">contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-								<div class="header-currency">
-									<span class="digit">USD <i class="ti-angle-down"></i></span>
-									<div class="dollar-submenu">
-										<ul>
-											<li><a href="#">$ USD</a></li>
-											<li><a href="#">€ EUR</a></li>
-											<li><a href="#">£ GBP</a></li>
-											<li><a href="#">₹ INR</a></li>
-											<li><a href="#">¥ JPY</a></li>
-										</ul>
-									</div>
-								</div>
-                                <div class="header-cart">
-                                    <a href="#">
-                                        <div class="cart-icon">
-                                            <i class="ti-shopping-cart"></i>
-                                        </div>
-                                    </a>
-                                    <div class="shopping-cart-content">
-                                        <ul>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.jpg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Phantom Remote </a></h4>
-                                                    <h6>Qty: 02</h6>
-                                                    <span>$260.00</span>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="ion ion-close"></i></a>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.jpg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Phantom Remote</a></h4>
-                                                    <h6>Qty: 02</h6>
-                                                    <span>$260.00</span>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="ion ion-close"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="shopping-cart-total">
-                                            <h4>Shipping : <span>$20.00</span></h4>
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                        </div>
-                                        <div class="shopping-cart-btn">
-                                            <a href="cart-page.php">view cart</a>
-                                            <a href="checkout.php">checkout</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mobile-menu-area">
-                        <div class="mobile-menu">
-                            <nav id="mobile-menu-active">
-                                <ul class="menu-overflow">
-                                    <li><a href="#">HOME</a>
-                                        <ul>
-                                            <li><a href="index.php">home version 1</a></li>
-                                            <li><a href="index-2.php">home version 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">pages</a>
-                                        <ul>
-                                            <li><a href="about-us.php">about us </a></li>
-                                            <li><a href="shop.php">shop Grid</a></li>
-                                            <li><a href="shop-list.php">shop list</a></li>
-                                            <li><a href="product-details.php">product details</a></li>
-                                            <li><a href="cart-page.php">cart page</a></li>
-                                            <li><a href="checkout.php">checkout</a></li>
-                                            <li><a href="wishlist.php">wishlist</a></li>
-                                            <li><a href="my-account.php">my account</a></li>
-                                            <li><a href="login-register.php">login / register</a></li>
-                                            <li><a href="contact.php">contact</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="shop.php"> Shop </a>
-                                        <ul>
-                                            <li><a href="#">Categories 01</a>
-                                                <ul>
-                                                    <li><a href="shop.php">Aconite</a></li>
-                                                    <li><a href="shop.php">Ageratum</a></li>
-                                                    <li><a href="shop.php">Allium</a></li>
-                                                    <li><a href="shop.php">Anemone</a></li>
-                                                    <li><a href="shop.php">Angelica</a></li>
-                                                    <li><a href="shop.php">Angelonia</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Categories 02</a>
-                                                <ul>
-                                                    <li><a href="shop.php">Balsam</a></li>
-                                                    <li><a href="shop.php">Baneberry</a></li>
-                                                    <li><a href="shop.php">Bee Balm</a></li>
-                                                    <li><a href="shop.php">Begonia</a></li>
-                                                    <li><a href="shop.php">Bellflower</a></li>
-                                                    <li><a href="shop.php">Bergenia</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Categories 03</a>
-                                                <ul>
-                                                    <li><a href="shop.php">Caladium</a></li>
-                                                    <li><a href="shop.php">Calendula</a></li>
-                                                    <li><a href="shop.php">Carnation</a></li>
-                                                    <li><a href="shop.php">Catmint</a></li>
-                                                    <li><a href="shop.php">Celosia</a></li>
-                                                    <li><a href="shop.php">Chives</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Categories 04</a>
-                                                <ul>
-                                                    <li><a href="shop.php">Daffodil</a></li>
-                                                    <li><a href="shop.php">Dahlia</a></li>
-                                                    <li><a href="shop.php">Daisy</a></li>
-                                                    <li><a href="shop.php">Diascia</a></li>
-                                                    <li><a href="shop.php">Dusty Miller</a></li>
-                                                    <li><a href="shop.php">Dame’s Rocket</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">BLOG</a>
-                                        <ul>
-                                            <li><a href="blog-masonry.php">Blog Masonry</a></li>
-                                            <li><a href="#">Blog Standard</a>
-                                                <ul>
-                                                    <li><a href="blog-left-sidebar.php">left sidebar</a></li>
-                                                    <li><a href="blog-right-sidebar.php">right sidebar</a></li>
-                                                    <li><a href="blog-no-sidebar.php">no sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Post Types</a>
-                                                <ul>
-                                                    <li><a href="blog-details-standerd.php">Standard post</a></li>
-                                                    <li><a href="blog-details-audio.php">audio post</a></li>
-                                                    <li><a href="blog-details-video.php">video post</a></li>
-                                                    <li><a href="blog-details-gallery.php">gallery post</a></li>
-                                                    <li><a href="blog-details-link.php">link post</a></li>
-                                                    <li><a href="blog-details-quote.php">quote post</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.php"> Contact us </a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-		<!-- header end -->
-        <!-- Breadcrumb Area Start -->
-        <div class="breadcrumb-area bg-image-3 ptb-150">
-            <div class="container">
-                <div class="breadcrumb-content text-center">
-					<h3>SINGLE PRODUCT</h3>
-                    <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li class="active">Single Product</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-		<!-- Breadcrumb Area End -->
-		<!-- Product Deatils Area Start -->
+$title = "Product Details";
+
+include_once "layouts/header.php";
+include_once "layouts/navbar.php";
+include_once "layouts/breadcrumb.php";
+
+
+use App\Database\Models\Product;
+
+include "./App/Database/Models/Product.php";
+
+
+if($_GET){
+
+    if(isset($_GET['product'])){
+
+        if(is_numeric($_GET['product'])){
+
+            $productObj = new Product;
+            $productData=$productObj->find($_GET['product']);
+            if($productData->num_rows == 1){
+
+               $product = $productData->fetch_object();
+
+            }else{
+        header("Location:layouts/notfound.php");
+
+            }
+
+        }else{
+    header("Location:layouts/notfound.php");
+
+        }
+    } else{
+    header("Location:layouts/notfound.php");
+
+    }
+
+
+
+
+}else{
+
+    header("Location:layouts/notfound.php");
+}
+
+
+
+
+
+?>
+  
+
+
         <div class="product-details pt-100 pb-95">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="product-details-img">
-                            <img class="zoompro" src="assets/img/product-details/product-detalis-l1.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg" alt="zoom"/>
-                            <div id="gallery" class="mt-20 product-dec-slider owl-carousel">
-                                <a data-image="assets/img/product-details/product-detalis-l1.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg">
-                                    <img src="assets/img/product-details/product-detalis-s1.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product-details/product-detalis-l2.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl2.jpg">
-                                    <img src="assets/img/product-details/product-detalis-s2.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product-details/product-detalis-l3.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl3.jpg">
-                                    <img src="assets/img/product-details/product-detalis-s3.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product-details/product-detalis-l4.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl4.jpg">
-                                    <img src="assets/img/product-details/product-detalis-s4.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product-details/product-detalis-l5.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl5.jpg">
-                                    <img src="assets/img/product-details/product-detalis-s5.jpg" alt="">
-                                </a>
-                                <a data-image="assets/img/product-details/product-detalis-l2.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl2.jpg">
-                                    <img src="assets/img/product-details/product-detalis-s2.jpg" alt="">
-                                </a>
-                            </div>
-                            <span>-29%</span>
+                            <img class="zoompro" src="assets/img/product/<?=$product->image?>" data-zoom-image="assets/img/product/<?=$product->image?>" alt="zoom"/>
+                       
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="product-details-content">
-                            <h4>Nature Close Tea</h4>
+                            <h4><?=$product->name_en?></h4>
                             <div class="rating-review">
                                 <div class="pro-dec-rating">
                                     <i class="ion-android-star-outline theme-star"></i>
@@ -360,19 +81,31 @@
                                     </ul>
                                 </div>
                             </div>
-                            <span>$260.00</span>
                             <div class="in-stock">
-                                <p>Available: <span>In stock</span></p>
+
+                            <?php if($product->quantity > 0 &&  $product->quantity < 5) {
+                                
+
+                                $message = "In Stock (" . $product->quantity . ")";
+                                $color = "warning";
+                            }elseif($product->quantity == 0){
+                                $message = "Out Of Stock" ;
+                                $color = "danger";
+
+                                }else{
+                                    $message = "In Stock" ;
+                                    $color = "success";
+                                }
+                                ?>
+
+                                
+                                <p>Available: <span class="text-<?=$color?>" ><?=$message?></span></p>
+
                             </div>
-                            <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. </p>
-                            <div class="pro-dec-feature">
-                                <ul>
-                                    <li><input type="checkbox"> Protection Plan: <span> 2 year  $4.99</span></li>
-                                    <li><input type="checkbox"> Remote Holder: <span> $9.99</span></li>
-                                    <li><input type="checkbox"> Koral Alexa Voice Remote Case: <span> Red  $16.99</span></li>
-                                    <li><input type="checkbox"> Amazon Basics HD Antenna: <span>25 Mile  $14.99</span></li>
-                                </ul>
-                            </div>
+                            <p><?=$product->details_en?> </p>
+
+                            <?php if($product->quantity != 0) { ?>
+                         
                             <div class="quality-add-to-cart">
                                 <div class="quality">
                                     <label>Qty:</label>
@@ -386,26 +119,21 @@
                                         <i class="icon-heart"></i>
                                     </a>
                                 </div>
+
                             </div>
+                            <?php } ?>
                             <div class="pro-dec-categories">
                                 <ul>
+
+
                                     <li class="categories-title">Categories:</li>
-                                    <li><a href="#">Green,</a></li>
-                                    <li><a href="#">Herbal, </a></li>
-                                    <li><a href="#">Loose,</a></li>
-                                    <li><a href="#">Mate,</a></li>
-                                    <li><a href="#">Organic </a></li>
+                                    <li><a href="#"><?=$product->category_name_en?>,</a></li>
+                                    <li><a href="#"><?=$product->subcategory_name_en?>, </a></li>
+                                    <li><a href="#"><?=$product->brand_name_en?>,</a></li>
+                              
                                 </ul>
                             </div>
-                            <div class="pro-dec-categories">
-                                <ul>
-                                    <li class="categories-title">Tags: </li>
-                                    <li><a href="#"> Oolong, </a></li>
-                                    <li><a href="#"> Pu'erh,</a></li>
-                                    <li><a href="#"> Dark,</a></li>
-                                    <li><a href="#"> Special </a></li>
-                                </ul>
-                            </div>
+                          
                             <div class="pro-dec-social">
                                 <ul>
                                     <li><a class="tweet" href="#"><i class="ion-social-twitter"></i> Tweet</a></li>
@@ -425,35 +153,16 @@
                 <div class="description-review-wrapper">
                     <div class="description-review-topbar nav text-center">
                         <a class="active" data-toggle="tab" href="#des-details1">Description</a>
-                        <a data-toggle="tab" href="#des-details2">Tags</a>
                         <a data-toggle="tab" href="#des-details3">Review</a>
                     </div>
                     <div class="tab-content description-review-bottom">
                         <div id="des-details1" class="tab-pane active">
                             <div class="product-description-wrapper">
-                                <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam est usus legentis in iis qui facit eorum claritatem. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. </p>
-                                <ul>
-                                    <li>-  Typi non habent claritatem insitam</li>
-                                    <li>-  Est usus legentis in iis qui facit eorum claritatem. </li>
-                                    <li>-  Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</li>
-                                    <li>-  Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</li>
-                                </ul>
+                                <p><?=$product->details_en?></p>
+                           
                             </div>
                         </div>
-                        <div id="des-details2" class="tab-pane">
-                            <div class="product-anotherinfo-wrapper">
-                                <ul>
-                                    <li><span>Tags:</span></li>
-                                    <li><a href="#"> Green,</a></li>
-                                    <li><a href="#"> Herbal,</a></li>
-                                    <li><a href="#"> Loose,</a></li>
-                                    <li><a href="#"> Mate,</a></li>
-                                    <li><a href="#"> Organic ,</a></li>
-                                    <li><a href="#"> special</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                      
                         <div id="des-details3" class="tab-pane">
                             <div class="rattings-wrapper">
                                 <div class="sin-rattings">
@@ -718,106 +427,7 @@
             </div>
         </div>
         <!-- Footer style Start -->
-        <footer class="footer-area pt-75 gray-bg-3">
-            <div class="footer-top gray-bg-3 pb-35">
-                <div class="container">
-                    <div class="row">
-						<div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-40">
-                                <div class="footer-title mb-25">
-                                    <h4>My Account</h4>
-                                </div>
-                                <div class="footer-content">
-                                    <ul>
-                                        <li><a href="my-account.php">My Account</a></li>
-                                        <li><a href="about-us.php">Order History</a></li>
-                                        <li><a href="wishlist.php">WishList</a></li>
-                                        <li><a href="#">Newsletter</a></li>
-                                        <li><a href="about-us.php">Order History</a></li>
-                                        <li><a href="#">International Orders</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-						<div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-40">
-                                <div class="footer-title mb-25">
-                                    <h4>Information</h4>
-                                </div>
-                                <div class="footer-content">
-                                    <ul>
-                                        <li><a href="about-us.php">About Us</a></li>
-                                        <li><a href="#">Delivery Information</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Customer Service</a></li>
-                                        <li><a href="#">Return Policy</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-						<div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="footer-widget mb-40">
-                                <div class="footer-title mb-25">
-                                    <h4>Quick Links</h4>
-                                </div>
-                                <div class="footer-content">
-                                    <ul>
-                                        <li><a href="#">Support Center</a></li>
-                                        <li><a href="#">Term & Conditions</a></li>
-                                        <li><a href="#">Shipping</a></li>
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Help</a></li>
-                                        <li><a href="#">FAQS</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="footer-widget footer-widget-red footer-black-color mb-40">
-                                <div class="footer-title mb-25">
-                                    <h4>Contact Us</h4>
-                                </div>
-                                <div class="footer-about">
-                                    <p>Your current address goes to here,120 haka, angladesh</p>
-                                    <div class="footer-contact mt-20">
-                                        <ul>
-                                            <li>(+008) 254 254 254 25487</li>
-                                            <li>(+009) 358 587 657 6985</li>
-                                        </ul>
-                                    </div>
-									<div class="footer-contact mt-20">
-                                        <ul>
-                                            <li>yourmail@example.com</li>
-                                            <li>example@admin.com</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom pb-25 pt-25 gray-bg-2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="copyright">
-                                <p><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="payment-img f-right">
-                                <a href="#">
-                                    <img alt="" src="assets/img/icon-img/payment.png">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-		<!-- Footer style End -->
+      
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -899,16 +509,9 @@
         </div>
         <!-- Modal end -->
         
-		<!-- all js here -->
-        <script src="assets/js/vendor/jquery-1.12.0.min.js"></script>
-        <script src="assets/js/popper.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-        <script src="assets/js/isotope.pkgd.min.js"></script>
-        <script src="assets/js/ajax-mail.js"></script>
-        <script src="assets/js/owl.carousel.min.js"></script>
-        <script src="assets/js/plugins.js"></script>
-        <script src="assets/js/main.js"></script>
-    </body>
+        <?php
+include "layouts/footer.php";
+include "layouts/scripts.php";
 
-</html>
+
+?>	

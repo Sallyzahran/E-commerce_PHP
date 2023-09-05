@@ -145,7 +145,7 @@ if($_GET){
                                     <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
                                         <div class="product-wrapper">
                                             <div class="product-img">
-                                                <a href="product-details.php">
+                                                <a href="product-details.php?product=<?=$product['id']?>">
                                                     <img alt="" src="assets/img/product/<?=$product['image']?>">
                                                 </a>
                                                 <div class="product-action">
@@ -164,11 +164,11 @@ if($_GET){
 												<div class="product-hover-style">
 													<div class="product-title">
 														<h4>
-															<a href="product-details.php"><?=$product['name_en']?></a>
+															<a href="product-details.php?product=<?=$product['id']?>"><?=$product['name_en']?></a>
 														</h4>
 													</div>
 													<div class="cart-hover">
-														<h4><a href="product-details.php">+ Add to cart</a></h4>
+														<h4><a href="product-details.php?product=<?=$product['id']?>">+ Add to cart</a></h4>
 													</div>
 												</div>
 												<div class="product-price-wrapper">
@@ -177,7 +177,7 @@ if($_GET){
 											</div>
                                             <div class="product-list-details">
                                                 <h4>
-                                                    <a href="product-details.php">Nature Close Tea</a>
+                                                    <a href="product-details.php?product=<?=$product['id']?>">Nature Close Tea</a>
                                                 </h4>
                                                 <p><?=$product['details_en']?></p>  
                                                          <div class="shop-list-cart-wishlist">
