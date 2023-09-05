@@ -68,15 +68,30 @@ if($_GET){
                             <h4><?=$product->name_en?></h4>
                             <div class="rating-review">
                                 <div class="pro-dec-rating">
+
+
+                                <?php 
+                                
+                                for ($i=1 ; $i <= $product->reviews_rate ; $i ++) {
+                                
+                                ?>
                                     <i class="ion-android-star-outline theme-star"></i>
-                                    <i class="ion-android-star-outline theme-star"></i>
-                                    <i class="ion-android-star-outline theme-star"></i>
-                                    <i class="ion-android-star-outline theme-star"></i>
+                              
+
+                                    <?php } 
+                                    
+                                    for ($i=1 ; $i <= 5 - $product->reviews_rate ; $i ++) {
+                                
+                                    ?>
+
+                                
                                     <i class="ion-android-star-outline"></i>
+
+                                    <?php }?>
                                 </div>
                                 <div class="pro-dec-review">
                                     <ul>
-                                        <li>32 Reviews </li>
+                                        <li><?=$product->reviews_count?> Reviews </li>
                                         <li> Add Your Reviews</li>
                                     </ul>
                                 </div>
