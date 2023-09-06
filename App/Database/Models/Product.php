@@ -321,6 +321,21 @@ class Product extends Model implements Crud {
   }
 
 
+
+  public function latestProducts(){
+
+
+
+    $query = "SELECT * FROM products
+    order BY created_at DESC
+    LIMIT 4";
+
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    return $stmt->get_result();
+  }
+
+
 }
 
 

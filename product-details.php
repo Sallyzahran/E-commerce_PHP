@@ -303,6 +303,7 @@ if($reviewObj->isReviwed()->num_rows == 1){
                                     <form action="" method="post">
                                         <div class="star-box">
                                             <h2>Rating:</h2>
+                                            <form action="" method="post">
                                             <div class="ratting-star">
 
                                  <button class="button-class"> <i class="ion-android-star-outline"></i></button>   
@@ -316,6 +317,7 @@ if($reviewObj->isReviwed()->num_rows == 1){
 
 
                                             </div>
+                                            </form>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
