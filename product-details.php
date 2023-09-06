@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+use App\Http\Requests\Validation;
+use App\Database\Models\User;
+use App\Database\Models\Review;
+
+
 $title = "Product Details";
 
 include_once "layouts/header.php";
@@ -8,6 +15,8 @@ include_once "layouts/breadcrumb.php";
 
 
 use App\Database\Models\Product;
+
+include "./App/Http/Requests/Validation.php";
 
 include "./App/Database/Models/Product.php";
 
@@ -46,12 +55,66 @@ if($_GET){
     header("Location:layouts/notfound.php");
 }
 
+$validation = new Validation ;
+
+
+if( $_SERVER['REQUEST_METHOD'] == 'POST'  &&  $_POST){
+
+$validation->setValueName('name')->setValue($_POST['name'])->required()->min(3)->max(32);
+$validation->setValueName('email')->setValue($_POST['email'])->required()->regex('/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/');
+$validation->setValue('message')->setValue($_POST['message'])->required()->min(3);
+
+if (empty($validation->getErrors())){
+include "./App/Database/Models/User.php";
+
+$user = new User;
+$user->setEmail($_POST['email'])->checkEmailExist();
+ if($user->checkEmailExist()->num_rows == 1){
+
+include "./App/Database/Models/Review.php";
+$reviewObj = new Review;
+$reviewObj->setUser_id($_SESSION['user']->id)->setProduct_id($_GET['product'])->setComment($_POST['message']);
+
+if($reviewObj->isReviwed()->num_rows == 1){
+
+    $error =  "<div class='alert alert-danger text-center'>You Already Reviewd This Product</div>";
+
+} else {
+    if($reviewObj->create()){
+    $message =  "<div class='alert alert-success text-center'>Review Added</div>";
+
+
+
+}else{
+    $error =  "<div class='alert alert-danger text-center'>somthing went wrong Please Try Again </div>";
+}
+
+ }
+ } else{
+    header("Location:login.php");
+}
+
+
+
+}
+}
+
 
 
 
 
 ?>
   
+  <style>
+    .button-class {
+  border: none;
+  background-color: transparent;
+}
+  </style>
+
+
+        <?=$error ?? "" ?> 
+        <?=$message ?? "" ?> 
 
 
         <div class="product-details pt-100 pb-95">
@@ -237,32 +300,62 @@ if($_GET){
                             <div class="ratting-form-wrapper">
                                 <h3>Add your Comments :</h3>
                                 <div class="ratting-form">
-                                    <form action="#">
+                                    <form action="" method="post">
                                         <div class="star-box">
                                             <h2>Rating:</h2>
                                             <div class="ratting-star">
 
-                                                <i class="ion-star theme-color"></i>
-                                                <i class="ion-star theme-color"></i>
-                                                <i class="ion-star theme-color"></i>
-                                                <i class="ion-star theme-color"></i>
-                                                <i class="ion-star"></i>
+                                 <button class="button-class"> <i class="ion-android-star-outline"></i></button>   
+                                 <button class="button-class"> <i class="ion-android-star-outline"></i></button>   
+                                 <button class="button-class"> <i class="ion-android-star-outline"></i></button>   
+                                 <button class="button-class"> <i class="ion-android-star-outline"></i></button>  
+                                 <button class="button-class"> <i class="ion-android-star-outline"></i></button>   
+
+                                
+
+
+
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="rating-form-style mb-20">
-                                                    <input placeholder="Name" type="text">
+                                                    <?php if(isset($_SESSION['user'])) { ?>
+                                                    <input value="<?=$_SESSION['user']->first_name ?>" name="name" type="text"  >
+                                                    <?php  } else {?>
+                                                        <input placeholder="Name" name="name" type="text"  >
+                                                        <?php 
+                                                        $validation->getMessage('name') 
+                                                        
+                                                        ?>
+
+                                                        <?php } ?>
+                                                    
+                                                    
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="rating-form-style mb-20">
-                                                    <input placeholder="Email" type="text">
+                                                <?php if(isset($_SESSION['user'])) { ?>
+                                                    <input value="<?=$_SESSION['user']->email ?>" name="email" type="text"  >
+                                                    <?php  } else {?>
+                                                        <input placeholder="Email" name="email" type="text"  >
+
+                                                        <?php } ?>                
+                                                        <?php 
+                                                        $validation->getMessage('email')
+                                                        
+                                                        ?>                 
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="rating-form-style form-submit">
                                                     <textarea name="message" placeholder="Message"></textarea>
+                                                    <?php 
+                                                        $validation->getMessage('message')
+                                                        
+                                                        ?>   
                                                     <input type="submit" value="add review">
                                                 </div>
                                             </div>
