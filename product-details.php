@@ -195,44 +195,45 @@ if($_GET){
                         </div>
                       
                         <div id="des-details3" class="tab-pane">
+
+                        <?php 
+                                 $reviews = $productObj->reviews()->fetch_all(MYSQLI_ASSOC);
+                                        foreach ($reviews as $review) {
+                                            ?>
                             <div class="rattings-wrapper">
                                 <div class="sin-rattings">
                                     <div class="star-author-all">
                                         <div class="ratting-star f-left">
+                              <?php  for ($i=1 ; $i <= $review['rate'] ; $i ++) { ?>
+
                                             <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <span>(5)</span>
+                                            <?php }
+                                            
+                                            for ($i=1 ; $i <= 5 - $review['rate'] ; $i ++) { 
+                                            
+                                            ?>
+                                    <i class="ion-android-star-outline"></i>
+                                                    <?php } ?>
+                                            <span>(<?=$review['rate']?>)</span>
                                         </div>
                                         <div class="ratting-author f-right">
-                                            <h3>Potanu Leos</h3>
-                                            <span>12:24</span>
-                                            <span>9 March 2018</span>
+                                           
+
+                                            <h3><?=$review['first_name'] .' ' . $review['last_name']?></h3>
+                                            <span></span>
+                                            <span><?=$review['created_at']?></span>
                                         </div>
                                     </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost rud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost.</p>
-                                </div>
-                                <div class="sin-rattings">
-                                    <div class="star-author-all">
-                                        <div class="ratting-star f-left">
-                                            <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <i class="ion-star theme-color"></i>
-                                            <span>(5)</span>
-                                        </div>
-                                        <div class="ratting-author f-right">
-                                            <h3>Kahipo Khila</h3>
-                                            <span>12:24</span>
-                                            <span>9 March 2018</span>
-                                        </div>
-                                    </div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost rud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nost.</p>
+                                    <?php if(isset($review['comment'])) { ?>
+                                    <p><?=$review['comment']?></p>
+                                    <?php } else {?>
+                                        <p>No Comment</p>
+
+                                        <?php } ?>
                                 </div>
                             </div>
+
+                            <?php } ?>
                             <div class="ratting-form-wrapper">
                                 <h3>Add your Comments :</h3>
                                 <div class="ratting-form">
@@ -240,6 +241,7 @@ if($_GET){
                                         <div class="star-box">
                                             <h2>Rating:</h2>
                                             <div class="ratting-star">
+
                                                 <i class="ion-star theme-color"></i>
                                                 <i class="ion-star theme-color"></i>
                                                 <i class="ion-star theme-color"></i>

@@ -307,6 +307,20 @@ class Product extends Model implements Crud {
   }
 
 
+
+  public function reviews(){
+
+    $query ="SELECT reviwes.* , users.first_name , users.last_name
+    FROM reviwes JOIN users ON users.id = reviwes.user_id
+    WHERE reviwes.product_id = ?";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param('i',$this->id);
+    $stmt->execute();
+    return $stmt->get_result();
+
+  }
+
+
 }
 
 
