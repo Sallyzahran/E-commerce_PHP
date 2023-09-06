@@ -293,6 +293,20 @@ class Product extends Model implements Crud {
   }
 
 
+
+  public function specs(){
+
+    $query = " SELECT specs.name , product_spec.value , product_spec.product_id
+    from specs JOIN product_spec ON 
+    specs.id = product_spec.spec_id
+    WHERE product_spec.product_id = ? ";
+    $stmt = $this->conn->prepare($query);
+    $stmt->bind_param('i',$this->id);
+    $stmt->execute();
+    return $stmt->get_result();
+  }
+
+
 }
 
 

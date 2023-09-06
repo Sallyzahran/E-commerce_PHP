@@ -119,6 +119,22 @@ if($_GET){
                             </div>
                             <p><?=$product->details_en?> </p>
 
+                            <div class="pro-dec-feature">
+                        <ul>
+
+                        <?php  
+                        $productObj->setId($_GET['product']);
+                        $specs = $productObj->specs()->fetch_all(MYSQLI_ASSOC);
+
+                        foreach ($specs As $spec) {
+                        
+                        ?>
+                            <li><?= $spec['name']?>: <span> <?=$spec['value']?></span></li>
+                           
+                            <?php } ?>
+                        </ul>
+                    </div>
+
                             <?php if($product->quantity != 0) { ?>
                          
                             <div class="quality-add-to-cart">
