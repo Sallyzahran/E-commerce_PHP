@@ -7,6 +7,8 @@ include_once "layouts/navbar.php";
 
 use App\Database\Models\Brand;
 use App\Database\Models\Product;
+use App\Database\Models\OrderProduct;
+
 
 include_once "./App/Database/Models/Brand.php";
 $brandObj = new Brand;
@@ -16,6 +18,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include "./App/Database/Models/Product.php";
+include "./App/Database/Models/OrderProduct.php";
+
 
 
 
@@ -51,6 +55,11 @@ include "./App/Database/Models/Product.php";
 		<!-- Product Area Start -->
         <div class="product-area bg-image-1 pt-100 pb-95">
             <div class="container">
+			<div class="product-top-bar section-border mb-55">
+                    <div class="section-title-wrap text-center">
+                        <h3 class="section-title">Brands</h3>
+                    </div>
+                </div>
                 <div class="row">
 					<?php
 					
@@ -220,51 +229,34 @@ include "./App/Database/Models/Product.php";
             <div class="container">
                 <div class="product-top-bar section-border mb-55">
                     <div class="section-title-wrap text-center">
-                        <h3 class="section-title">Latest News</h3>
+                        <h3 class="section-title">Most Orderd Products</h3>
                     </div>
                 </div>
 			</div>
 			<div class="container">
 				<div class="row">
+
+				<?php
+			$orderProductObj = new OrderProduct;
+			$orders = $orderProductObj->mostOrderProducts()->fetch_all(MYSQLI_ASSOC);
+
+			foreach ($orders AS $order) {
+
+			
+				?>
 					<div class="col-lg-4 col-md-6">
 						<div class="blog-single mb-30">
 							<div class="blog-thumb">
-								<a href="#"><img src="assets/img/blog/blog-single-1.jpg" alt="" /></a>
+								<a href="product-details.php?product=<?=$order['product_id']?>"><img src="assets/img/product/<?=$order['image']?>" alt="" /></a>
 							</div>
 							<div class="blog-content pt-25">
-								<span class="blog-date">14 Sep</span>
-								<h3><a href="#">Lorem ipsum sit ame co.</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eius tempor incididunt ut labore et dolore</p>
-								<a href="#">Read More</a>
+								<h3><a href="#"><?=$order['name_en']?></a></h3>
+									<span><?=$order['price']?></span> <br>							
+
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="blog-single mb-30">
-							<div class="blog-thumb">
-								<a href="#"><img src="assets/img/blog/blog-single-2.jpg" alt="" /></a>
-							</div>
-							<div class="blog-content pt-25">
-								<span class="blog-date">20 Dec</span>
-								<h3><a href="#">Lorem ipsum sit ame co.</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eius tempor incididunt ut labore et dolore</p>
-								<a href="#">Read More</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="blog-single mb-30">
-							<div class="blog-thumb">
-								<a href="#"><img src="assets/img/blog/blog-single-3.jpg" alt="" /></a>
-							</div>
-							<div class="blog-content pt-25">
-								<span class="blog-date">18 Aug</span>
-								<h3><a href="#">Lorem ipsum sit ame co.</a></h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed do eius tempor incididunt ut labore et dolore</p>
-								<a href="#">Read More</a>
-							</div>
-						</div>
-					</div>
+				<?php } ?>
 				</div>
 			</div>
 		</div>
